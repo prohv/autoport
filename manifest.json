@@ -1,0 +1,45 @@
+{
+    "manifest_version": 3,
+    "name": "AutoPort",
+    "version": "1.0",
+    "description": "Automatically login to VIT WiFi portal",
+    
+    "permissions": [
+      "storage",
+      "activeTab",
+      "tabs",
+      "webRequest",
+      "scripting"
+    ],
+    
+    "host_permissions": [
+      "http://phc.prontonetworks.com/*",
+      "http://136.233.9.110/*",
+      "http://136.233.9.125/*"
+    ],
+    
+    "content_scripts": [
+      {
+        "matches": [
+          "http://phc.prontonetworks.com/*",
+          "https://phc.prontonetworks.com/*"
+        ],
+        "js": ["content.js"],
+        "run_at": "document_end"
+      }
+    ],
+    
+    "background": {
+      "service_worker": "background.js"
+    },
+    
+    "action": {
+      "default_popup": "popup.html",
+      "default_title": "AutoPort Settings"
+    },
+    
+    "icons": {
+      "48": "autoport48.png",
+      "128": "autoport128.png"
+    }
+  }

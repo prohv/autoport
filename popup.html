@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 300px;
+      padding: 20px;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      background-color: #1b1c1d;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #c0ff72;
+      background-color: #1b1c1d;
+    }
+    
+    .header h2 {
+      color: #c0ff72;
+      margin: 0;
+      font-size: 18px;
+    }
+    
+    .form-group {
+      margin-bottom: 15px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+      color: #fff;
+    }
+    
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #1b1c1d;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      box-sizing: border-box;
+      transition: border-color 0.3s;
+    }
+    
+    input[type="text"]:focus, input[type="password"]:focus {
+      outline: none;
+      border-color: #c0ff72;
+      border-width: 3px;
+    }
+    
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background: #c0ff72;
+      color: #1b1c1d;
+      border: none;
+      border-radius: 15px;
+      font-size: 14px;
+      font-weight: 750;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .btn:hover {
+      background: #8cff00; 
+    }
+    
+    .btn:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .status {
+      text-align: center;
+      padding: 10px;
+      border-radius: 15px;
+      margin-top: 15px;
+      font-size: 13px;
+      color: #fff;
+      }
+    
+    .status.success {
+      background: #d4edda;
+      color: #155724;
+    }
+    
+    .status.info {
+      font-weight: 500;
+      background: #1b1c1d;
+      color: #c0ff72;
+    }
+    
+    .current-creds {
+      background: #1b1c1d;
+      padding: 10px;
+      margin-bottom: 15px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #c0ff72;
+    }
+    
+    .current-creds strong {
+      color: #fff;
+    }
+
+    .form-group {
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h2>AutoPort</h2>
+  </div>
+  
+  <div id="current-status" class="current-creds" style="display: none;">
+    <strong>Current Settings:</strong><br>
+    Username: <span id="current-username">-</span><br>
+    Password: <span id="current-password">••••••••</span>
+  </div>
+  
+  <div class="form-group">
+    <label for="username">Username:</label>
+    <input type="text" id="username" placeholder="Enter your username">
+  </div>
+  
+  <div class="form-group">
+    <label for="password">Password:</label>
+    <input type="password" id="password" placeholder="Enter your password">
+  </div>
+  <br>
+  <button id="save-btn" class="btn">Save Credentials</button>
+  
+  <div id="status-message" class="status" style="display: none;"></div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
